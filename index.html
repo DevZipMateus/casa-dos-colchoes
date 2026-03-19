@@ -445,7 +445,12 @@
     /* ══════════════════════════════════════
        SOBRE
     ══════════════════════════════════════ */
-    #sobre { background: var(--cinza-f); }
+    #sobre {
+      background:
+        linear-gradient(rgba(248,250,252,0.93), rgba(248,250,252,0.93)),
+        url('images/bg-sobre.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .sobre-grid {
       display: grid;
@@ -574,7 +579,10 @@
        MVV
     ══════════════════════════════════════ */
     #mvv {
-      background: var(--azul);
+      background:
+        linear-gradient(rgba(6,24,64,0.90), rgba(6,24,64,0.90)),
+        url('images/bg-mvv.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
       padding: 80px 0;
     }
     .mvv-grid {
@@ -697,7 +705,12 @@
     /* ══════════════════════════════════════
        MARCAS
     ══════════════════════════════════════ */
-    #marcas { background: var(--cinza-f); }
+    #marcas {
+      background:
+        linear-gradient(rgba(248,250,252,0.94), rgba(248,250,252,0.94)),
+        url('images/bg-marcas.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .marcas-intro {
       text-align: center;
@@ -1179,7 +1192,7 @@
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: span 2; }
       /* Desativa parallax — bug iOS/Android */
-      #hero, #diferenciais {
+      #hero, #sobre, #mvv, #marcas, #diferenciais {
         background-attachment: scroll, scroll;
       }
     }
