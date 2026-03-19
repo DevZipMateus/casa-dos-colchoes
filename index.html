@@ -1183,6 +1183,59 @@
     }
 
     /* ══════════════════════════════════════
+       LOADER
+    ══════════════════════════════════════ */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--azul-escuro);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.7s ease;
+    }
+    #loader.saindo { opacity: 0; pointer-events: none; }
+
+    .loader-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .loader-logo {
+      height: 80px;
+      filter: brightness(0) invert(1);
+      animation: loaderPulse 1.8s ease infinite;
+    }
+    @keyframes loaderPulse {
+      0%, 100% { opacity: 1;   transform: scale(1); }
+      50%       { opacity: 0.7; transform: scale(0.96); }
+    }
+    .loader-bar-wrap {
+      width: 240px;
+      height: 3px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: var(--vermelho);
+      border-radius: 2px;
+      transition: width 2.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .loader-txt {
+      color: rgba(255,255,255,0.38);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════════
        EFEITOS / ANIMAÇÕES
     ══════════════════════════════════════ */
 
@@ -1398,6 +1451,17 @@
 <body>
 
 <div id="progress-bar" aria-hidden="true"></div>
+
+<!-- ===== LOADER ===== -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img src="images/logo.png" alt="Casa dos Colchões" class="loader-logo">
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <span class="loader-txt">Carregando...</span>
+  </div>
+</div>
 
 <!-- ===== HEADER ===== -->
 <header id="header">
@@ -2137,19 +2201,28 @@
     progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight * 100) : 0) + '%';
   }, { passive: true });
 
-  // ── Reveal on scroll ─────────────────────────────────
-  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.10 });
-  revealEls.forEach(el => revealObs.observe(el));
+  // ── Loader + scroll ao topo ──────────────────────────
+  window.scrollTo(0, 0);
+  document.body.style.overflow = 'hidden';
 
-  // ── Contador animado nos stats do hero ───────────────
+  const loader    = document.getElementById('loader');
+  const loaderBar = document.getElementById('loaderBar');
+
+  // Dispara a barra assim que o DOM renderizar
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { loaderBar.style.width = '100%'; });
+  });
+
+  setTimeout(() => {
+    loader.classList.add('saindo');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      loader.remove();
+      iniciarEfeitos();
+    }, 700);
+  }, 3000);
+
+  // ── Efeitos — só iniciam após o loader ───────────────
   function animarContador(el, alvo, prefixo, sufixo) {
     const dur = 1800;
     const inicio = performance.now();
@@ -2161,21 +2234,35 @@
     })(inicio);
   }
 
-  const heroStats = document.querySelector('.hero-stats');
-  if (heroStats) {
-    const contObs = new IntersectionObserver((entries) => {
+  function iniciarEfeitos() {
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const [s0, s1, s2, s3] = entry.target.querySelectorAll('strong');
-          animarContador(s0, 16, '+', '');
-          animarContador(s1, 10, '',  '+');
-          animarContador(s2, 100, '', '%');
-          // s3 (5★) — apenas aparece com fade, sem contador numérico
-          contObs.unobserve(entry.target);
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
-    contObs.observe(heroStats);
+    }, { threshold: 0.10 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // Contador nos stats do hero
+    const heroStats = document.querySelector('.hero-stats');
+    if (heroStats) {
+      const contObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const [s0, s1, s2] = entry.target.querySelectorAll('strong');
+            animarContador(s0, 16, '+', '');
+            animarContador(s1, 10, '',  '+');
+            animarContador(s2, 100, '', '%');
+            contObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      contObs.observe(heroStats);
+    }
   }
 </script>
 </body>
