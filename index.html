@@ -802,6 +802,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+    /* Último card sozinho na linha fica centralizado */
+    .depo-card:last-child:nth-child(3n+1) {
+      grid-column: 2;
+    }
     .depo-card {
       background: var(--cinza-f);
       border: 1px solid var(--cinza-e);
@@ -1767,39 +1771,91 @@
       <p>A opinião de quem já dormiu melhor depois de passar pela Casa dos Colchões.</p>
     </div>
     <div class="depo-grid">
+
       <div class="depo-card reveal d1">
         <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Ótimo atendimento e entrega super rápida! Fiquei muito satisfeito com a qualidade do produto e o cuidado da equipe."</p>
+        <p class="depo-texto">"Funcionários muito atenciosos e bons preços!!!"</p>
         <div class="depo-autor">
-          <div class="depo-avatar" aria-hidden="true">C</div>
+          <div class="depo-avatar" aria-hidden="true">F</div>
           <div>
-            <div class="depo-nome">Cliente satisfeito</div>
+            <div class="depo-nome">Cliente Google</div>
             <div class="depo-local">Leme, SP</div>
           </div>
         </div>
       </div>
+
       <div class="depo-card reveal d2">
         <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Comprei meu colchão e amei a qualidade! Finalmente consigo dormir bem de novo. Recomendo muito a Casa dos Colchões."</p>
+        <p class="depo-texto">"Bom atendimento e ótimos produtos."</p>
         <div class="depo-autor">
-          <div class="depo-avatar" aria-hidden="true">A</div>
+          <div class="depo-avatar" aria-hidden="true">E</div>
           <div>
-            <div class="depo-nome">Cliente satisfeita</div>
+            <div class="depo-nome">Cliente Google</div>
             <div class="depo-local">Leme, SP</div>
           </div>
         </div>
       </div>
+
       <div class="depo-card reveal d3">
         <div class="depo-stars">★★★★★</div>
-        <p class="depo-texto">"Preço justo e muita atenção com o cliente! Me explicaram tudo sobre os modelos e me ajudaram a escolher o ideal para mim."</p>
+        <p class="depo-texto">"Muitas opções e ótimo atendimento."</p>
         <div class="depo-autor">
           <div class="depo-avatar" aria-hidden="true">M</div>
           <div>
-            <div class="depo-nome">Cliente satisfeito</div>
+            <div class="depo-nome">Cliente Google</div>
             <div class="depo-local">Leme, SP</div>
           </div>
         </div>
       </div>
+
+      <div class="depo-card reveal d1">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Para uma especialista em finanças, esta visita foi fascinante... Obrigada à vendedora que me ajudou e atendeu as minhas necessidades."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">W</div>
+          <div>
+            <div class="depo-nome">Wiviane Marshal</div>
+            <div class="depo-local">há 5 anos · Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card reveal d2">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Fui muito bem atendida. Vendedoras gentis e muito atenciosas."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">A</div>
+          <div>
+            <div class="depo-nome">Ana Claudia Sales Herculano</div>
+            <div class="depo-local">há 7 anos · Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card reveal d3">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Atendimento excelente."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">J</div>
+          <div>
+            <div class="depo-nome">Jana Ticher</div>
+            <div class="depo-local">há 7 meses · Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="depo-card reveal d4">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Encontrei o que eu precisava e o melhor foi a rapidez da entrega."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">C</div>
+          <div>
+            <div class="depo-nome">Cíntia Bini</div>
+            <div class="depo-local">há 2 anos · Google</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
