@@ -298,7 +298,27 @@
       padding: 80px 0;
       position: relative;
       z-index: 1;
-      max-width: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* ── Vídeo hero ── */
+    .hero-video-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.12);
+      position: relative;
+      background: #000;
+    }
+    .hero-video-wrap video {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+      object-fit: cover;
     }
 
     .hero-logo {
@@ -983,6 +1003,148 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
+    /* ══════════════════════════════════════
+       GALERIA / CARROSSEL
+    ══════════════════════════════════════ */
+    #galeria { background: var(--branco); }
+
+    .car-wrap {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 36px var(--sombra);
+    }
+    .car-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .car-slide {
+      flex: 0 0 100%;
+      cursor: zoom-in;
+      overflow: hidden;
+    }
+    .car-slide img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .car-slide:hover img { transform: scale(1.03); }
+
+    .car-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(10,36,99,0.72);
+      border: none;
+      color: var(--branco);
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background var(--tr);
+    }
+    .car-arrow:hover { background: var(--azul); }
+    .car-arrow.prev { left: 16px; }
+    .car-arrow.next { right: 16px; }
+
+    .car-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .car-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cinza-e);
+      border: none;
+      cursor: pointer;
+      transition: all var(--tr);
+      padding: 0;
+    }
+    .car-dot.ativo {
+      background: var(--azul);
+      width: 26px;
+      border-radius: 4px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.93);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.show { display: flex; }
+    .lb-img {
+      max-width: 90vw;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      user-select: none;
+    }
+    .lb-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.22);
+      color: var(--branco);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--tr);
+    }
+    .lb-close:hover { background: rgba(255,255,255,0.22); }
+    .lb-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.10);
+      border: 1.5px solid rgba(255,255,255,0.18);
+      color: var(--branco);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--tr);
+    }
+    .lb-arrow:hover { background: rgba(255,255,255,0.22); }
+    .lb-arrow.prev { left: 18px; }
+    .lb-arrow.next { right: 18px; }
+    .lb-counter {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.50);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
     /* ── WhatsApp flutuante ── */
     .wa-float {
       position: fixed;
@@ -1011,6 +1173,8 @@
     }
 
     @media (max-width: 1023px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-video-wrap { max-width: 600px; margin: 0 auto; width: 100%; }
       .dif-grid  { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: span 2; }
@@ -1027,6 +1191,7 @@
       .depo-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
       .contato-grid { grid-template-columns: 1fr; }
       .contato-mapa iframe { height: 340px; }
+      .car-slide img { height: 380px; }
     }
 
     @media (max-width: 768px) {
@@ -1040,6 +1205,9 @@
       .sec-header { margin-bottom: 44px; }
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
       .footer-brand { grid-column: span 1; }
+      .car-slide img { height: 320px; }
+      .car-arrow { width: 40px; height: 40px; font-size: 0.85rem; }
+      .lb-arrow { width: 46px; height: 46px; }
     }
 
     @media (max-width: 600px) {
@@ -1053,6 +1221,9 @@
       .dif-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .marcas-grid { gap: 10px; }
       .marca-item { padding: 11px 18px; font-size: 0.80rem; }
+      .car-slide img { height: 260px; }
+      .car-arrow { width: 36px; height: 36px; left: 8px; }
+      .car-arrow.next { left: auto; right: 8px; }
     }
 
     @media (max-width: 480px) {
@@ -1063,6 +1234,10 @@
       .sobre-badges { grid-template-columns: 1fr; }
       .contato-mapa iframe { height: 280px; }
       .dif-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+      .car-slide img { height: 220px; }
+      .lb-arrow { width: 40px; height: 40px; font-size: 1rem; }
+      .lb-arrow.prev { left: 8px; }
+      .lb-arrow.next { right: 8px; }
     }
 
     @media (max-width: 380px) {
@@ -1071,6 +1246,7 @@
       .section { padding: 48px 0; }
       .hero-logo { height: 50px; }
       .mvv-card { padding: 28px 20px; }
+      .car-slide img { height: 190px; }
     }
   </style>
 </head>
@@ -1088,6 +1264,7 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#produtos">Produtos</a></li>
         <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
         <li><a href="#depoimentos">Depoimentos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
@@ -1109,6 +1286,7 @@
   <a href="#sobre"        onclick="closeMenu()">Sobre</a>
   <a href="#produtos"     onclick="closeMenu()">Produtos</a>
   <a href="#marcas"       onclick="closeMenu()">Marcas</a>
+  <a href="#galeria"      onclick="closeMenu()">Galeria</a>
   <a href="#depoimentos"  onclick="closeMenu()">Depoimentos</a>
   <a href="#contato"      onclick="closeMenu()">Contato</a>
   <a href="https://wa.me/551935543961" target="_blank" onclick="closeMenu()" class="mob-cta">
@@ -1120,43 +1298,61 @@
 <!-- ===== HERO ===== -->
 <section id="hero" aria-label="Apresentação">
   <div class="container hero-inner">
-    <img src="images/logo.png" alt="Casa dos Colchões — Especialista em Colchões" class="hero-logo">
 
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      Especialista em Colchões desde 2009
+    <!-- Texto (esquerda) -->
+    <div class="hero-text">
+      <img src="images/logo.png" alt="Casa dos Colchões — Especialista em Colchões" class="hero-logo">
+
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Especialista em Colchões desde 2009
+      </div>
+
+      <h1>Casa dos<br><span>Colchões</span></h1>
+      <h2>Mais de 16 anos levando conforto, qualidade de sono e bem-estar para os lares de Leme e região.</h2>
+
+      <div class="hero-btns">
+        <a href="#produtos" class="btn btn-vermelho">
+          <i class="fas fa-bed" aria-hidden="true"></i> Ver produtos
+        </a>
+        <a href="https://wa.me/551935543961" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+        </a>
+      </div>
+
+      <div class="hero-stats" role="list">
+        <div class="hero-stat" role="listitem">
+          <strong>+16</strong>
+          <span>Anos de mercado</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <strong>10+</strong>
+          <span>Marcas parceiras</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <strong>100%</strong>
+          <span>Entrega gratuita</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <strong>5★</strong>
+          <span>Avaliação dos clientes</span>
+        </div>
+      </div>
     </div>
 
-    <h1>Casa dos<br><span>Colchões</span></h1>
-    <h2>Mais de 16 anos levando conforto, qualidade de sono e bem-estar para os lares de Leme e região.</h2>
-
-    <div class="hero-btns">
-      <a href="#produtos" class="btn btn-vermelho">
-        <i class="fas fa-bed" aria-hidden="true"></i> Ver produtos
-      </a>
-      <a href="https://wa.me/551935543961" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
-      </a>
+    <!-- Vídeo (direita) -->
+    <div class="hero-video-wrap">
+      <video
+        src="images/midia_12.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Vídeo institucional Casa dos Colchões"
+      ></video>
     </div>
 
-    <div class="hero-stats" role="list">
-      <div class="hero-stat" role="listitem">
-        <strong>+16</strong>
-        <span>Anos de mercado</span>
-      </div>
-      <div class="hero-stat" role="listitem">
-        <strong>10+</strong>
-        <span>Marcas parceiras</span>
-      </div>
-      <div class="hero-stat" role="listitem">
-        <strong>100%</strong>
-        <span>Entrega gratuita</span>
-      </div>
-      <div class="hero-stat" role="listitem">
-        <strong>5★</strong>
-        <span>Avaliação dos clientes</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1382,6 +1578,43 @@
 </section>
 
 
+<!-- ===== GALERIA ===== -->
+<section id="galeria" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">Nosso espaço</span>
+      <h2>Galeria</h2>
+      <p>Conheça de perto a qualidade dos nossos produtos e do nosso estoque.</p>
+    </div>
+    <div class="car-wrap">
+      <div class="car-track" id="carTrack"></div>
+      <button class="car-arrow prev" id="carPrev" aria-label="Imagem anterior">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="car-arrow next" id="carNext" aria-label="Próxima imagem">
+        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="car-dots" id="carDots" role="tablist"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-close" id="lbClose" aria-label="Fechar">
+    <i class="fas fa-times" aria-hidden="true"></i>
+  </button>
+  <button class="lb-arrow prev" id="lbPrev" aria-label="Imagem anterior">
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+  </button>
+  <button class="lb-arrow next" id="lbNext" aria-label="Próxima imagem">
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+  </button>
+  <span class="lb-counter" id="lbCounter">1 / 9</span>
+</div>
+
+
 <!-- ===== DEPOIMENTOS ===== -->
 <section id="depoimentos" class="section">
   <div class="container">
@@ -1515,6 +1748,7 @@
           <li><a href="#sobre">Nossa história</a></li>
           <li><a href="#produtos">Produtos</a></li>
           <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#galeria">Galeria</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -1593,6 +1827,108 @@
   }, { rootMargin: '-40% 0px -55% 0px' });
 
   sections.forEach(s => observer.observe(s));
+
+  // ── Carrossel ────────────────────────────────────────
+  const carImagens = [
+    'images/midia_3.png',
+    'images/midia_4.jpg',
+    'images/midia_5.jpg',
+    'images/midia_6.jpg',
+    'images/midia_7.jpg',
+    'images/midia_8.jpg',
+    'images/midia_9.jpg',
+    'images/midia_10.jpg',
+    'images/midia_11.jpg',
+  ];
+
+  let carIdx   = 0;
+  let carTimer = null;
+  const carTrack = document.getElementById('carTrack');
+  const carDots  = document.getElementById('carDots');
+
+  // Monta slides e dots dinamicamente
+  carImagens.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'car-slide';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Casa dos Colchões — foto ' + (i + 1);
+    img.loading = i === 0 ? 'eager' : 'lazy';
+    img.addEventListener('click', () => abrirLightbox(i));
+    slide.appendChild(img);
+    carTrack.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'car-dot' + (i === 0 ? ' ativo' : '');
+    dot.setAttribute('aria-label', 'Foto ' + (i + 1));
+    dot.setAttribute('role', 'tab');
+    dot.addEventListener('click', () => { irPara(i); iniciarTimer(); });
+    carDots.appendChild(dot);
+  });
+
+  function irPara(idx) {
+    carIdx = (idx + carImagens.length) % carImagens.length;
+    carTrack.style.transform = 'translateX(-' + (carIdx * 100) + '%)';
+    document.querySelectorAll('.car-dot').forEach((d, i) => {
+      d.classList.toggle('ativo', i === carIdx);
+    });
+  }
+
+  function iniciarTimer() {
+    clearInterval(carTimer);
+    carTimer = setInterval(() => irPara(carIdx + 1), 3000);
+  }
+
+  function pararTimer() { clearInterval(carTimer); }
+
+  document.getElementById('carPrev').addEventListener('click', () => { irPara(carIdx - 1); iniciarTimer(); });
+  document.getElementById('carNext').addEventListener('click', () => { irPara(carIdx + 1); iniciarTimer(); });
+
+  iniciarTimer();
+
+  // ── Lightbox ─────────────────────────────────────────
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lbImg');
+  const lbCounter = document.getElementById('lbCounter');
+  let lbIdx = 0;
+
+  function abrirLightbox(idx) {
+    lbIdx = idx;
+    lbImg.src = carImagens[lbIdx];
+    lbImg.alt = 'Casa dos Colchões — foto ' + (lbIdx + 1);
+    lbCounter.textContent = (lbIdx + 1) + ' / ' + carImagens.length;
+    lightbox.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    pararTimer();
+  }
+
+  function fecharLightbox() {
+    lightbox.classList.remove('show');
+    document.body.style.overflow = '';
+    iniciarTimer();
+  }
+
+  function lbNavegar(dir) {
+    lbIdx = (lbIdx + dir + carImagens.length) % carImagens.length;
+    lbImg.src = carImagens[lbIdx];
+    lbImg.alt = 'Casa dos Colchões — foto ' + (lbIdx + 1);
+    lbCounter.textContent = (lbIdx + 1) + ' / ' + carImagens.length;
+  }
+
+  document.getElementById('lbClose').addEventListener('click', fecharLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => lbNavegar(-1));
+  document.getElementById('lbNext').addEventListener('click', () => lbNavegar(1));
+
+  // Fecha ao clicar fora da imagem
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) fecharLightbox(); });
+
+  // Teclado
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+    if (e.key === 'Escape')      fecharLightbox();
+    if (e.key === 'ArrowLeft')   lbNavegar(-1);
+    if (e.key === 'ArrowRight')  lbNavegar(1);
+  });
 </script>
 </body>
 </html>
