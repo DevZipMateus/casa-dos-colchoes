@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa dos Colchões — Especialista em Colchões em Leme/SP</title>
+  <meta name="description" content="Casa dos Colchões em Leme/SP. Especialista em colchões, camas box, cabeceiras e travesseiros há mais de 16 anos. Marcas renomadas, atendimento personalizado e entrega gratuita na região.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Casa dos Colchões — Especialista em Colchões em Leme/SP">
+  <meta property="og:description" content="Especialista em colchões, camas box, cabeceiras e travesseiros há mais de 16 anos em Leme/SP. Entrega e montagem gratuita na região.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://casadoscolchoes.com.br">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:        #0A2463;
+      --azul2:       #1A3A7A;
+      --azul-escuro: #061840;
+      --azul-bg:     rgba(10,36,99,0.07);
+      --vermelho:    #CC1616;
+      --vermelho2:   #E53535;
+      --branco:      #FFFFFF;
+      --cinza-f:     #F8FAFC;
+      --cinza-e:     #E2E8F0;
+      --cinza-t:     #64748B;
+      --preto:       #0F172A;
+      --sombra:      rgba(10,36,99,0.10);
+      --header-h:    74px;
+      --tr:          0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--preto);
+      background: var(--branco);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; transition: color var(--tr); }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 96px 0; }
+
+    /* ── Section header ── */
+    .sec-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .sec-tag {
+      display: inline-block;
+      background: rgba(204,22,22,0.10);
+      color: var(--vermelho);
+      font-size: 0.70rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .sec-header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .sec-header p {
+      font-size: 1rem;
+      color: var(--cinza-t);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .sec-header-inv h2 { color: var(--branco); }
+    .sec-header-inv p  { color: rgba(255,255,255,0.65); }
+    .sec-header-inv .sec-tag {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.80);
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 7px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--tr);
+    }
+    .btn-azul  { background: var(--azul);    color: var(--branco); border-color: var(--azul); }
+    .btn-azul:hover  { background: var(--azul-escuro); border-color: var(--azul-escuro); }
+    .btn-vermelho { background: var(--vermelho); color: var(--branco); border-color: var(--vermelho); }
+    .btn-vermelho:hover { background: #AA1010; border-color: #AA1010; }
+    .btn-outline  {
+      background: transparent;
+      color: var(--branco);
+      border-color: rgba(255,255,255,0.55);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--branco);
+    }
+    .btn-outline-azul {
+      background: transparent;
+      color: var(--azul);
+      border-color: var(--azul);
+    }
+    .btn-outline-azul:hover { background: var(--azul); color: var(--branco); }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: var(--header-h);
+      z-index: 1000;
+      background: var(--azul-escuro);
+      border-bottom: 2px solid rgba(204,22,22,0.5);
+      transition: box-shadow var(--tr);
+    }
+    header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .header-logo img {
+      height: 50px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2px;
+    }
+    .desktop-nav ul li a {
+      color: rgba(255,255,255,0.80);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 8px 13px;
+      border-radius: 5px;
+      transition: all var(--tr);
+    }
+    .desktop-nav ul li a:hover { color: var(--branco); background: rgba(255,255,255,0.10); }
+
+    .btn-header-wpp {
+      background: var(--vermelho);
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.80rem;
+      font-weight: 700;
+      padding: 9px 18px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: background var(--tr);
+      flex-shrink: 0;
+    }
+    .btn-header-wpp:hover { background: #AA1010; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--branco);
+      border-radius: 2px;
+      transition: all var(--tr);
+    }
+    .hamburger.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.ativo span:nth-child(2) { opacity: 0; }
+    .hamburger.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    #navMenu {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      width: 100%;
+      background: var(--azul-escuro);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    #navMenu.open { display: flex; }
+    #navMenu a {
+      color: rgba(255,255,255,0.80);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 15px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all var(--tr);
+    }
+    #navMenu a:hover { color: var(--branco); background: rgba(255,255,255,0.07); }
+    #navMenu .mob-cta {
+      background: var(--vermelho);
+      color: var(--branco);
+      text-align: center;
+      padding: 16px 24px;
+      border-bottom: none;
+      font-weight: 700;
+    }
+    #navMenu .mob-cta:hover { background: #AA1010; }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(6,24,64,0.96) 0%, rgba(10,36,99,0.92) 55%, rgba(26,58,122,0.88) 100%),
+        url('images/hero-bg.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+      display: flex;
+      align-items: center;
+      padding-top: var(--header-h);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 30%, rgba(204,22,22,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 80%, rgba(30,58,138,0.35) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Padrão decorativo */
+    #hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+
+    .hero-logo {
+      height: 76px;
+      margin-bottom: 32px;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(204,22,22,0.18);
+      border: 1px solid rgba(204,22,22,0.40);
+      color: #FF9999;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FF9999;
+      flex-shrink: 0;
+    }
+
+    .hero-inner h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      color: var(--branco);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-inner h1 span { color: #FF6B6B; }
+
+    .hero-inner h2 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: clamp(0.98rem, 2vw, 1.18rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      padding: 20px 32px;
+      width: fit-content;
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 0 32px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat:first-child { padding-left: 0; }
+    .hero-stat:last-child  { padding-right: 0; border-right: none; }
+    .hero-stat strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--branco);
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.50);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ══════════════════════════════════════
+       FAIXA SLOGAN
+    ══════════════════════════════════════ */
+    .faixa-slogan {
+      background: var(--vermelho);
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .faixa-inner {
+      display: inline-flex;
+      animation: faixaScroll 28s linear infinite;
+    }
+    .faixa-inner span {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.80rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      padding: 0 28px;
+    }
+    .faixa-inner span i { font-size: 0.65rem; opacity: 0.70; }
+    @keyframes faixaScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════
+       SOBRE
+    ══════════════════════════════════════ */
+    #sobre { background: var(--cinza-f); }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .sobre-visual {
+      position: relative;
+    }
+    .sobre-card-principal {
+      background: var(--azul);
+      border-radius: 16px;
+      padding: 48px 40px;
+      color: var(--branco);
+      position: relative;
+      overflow: hidden;
+    }
+    .sobre-card-principal::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .sobre-card-principal::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -30px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(204,22,22,0.12);
+    }
+    .sobre-anos {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .anos-numero {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 5.5rem;
+      font-weight: 900;
+      color: var(--branco);
+      line-height: 1;
+      opacity: 0.95;
+    }
+    .anos-label {
+      padding-bottom: 12px;
+    }
+    .anos-label strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--branco);
+      line-height: 1.2;
+    }
+    .anos-label span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .sobre-card-principal p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    .sobre-badges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .sobre-badge {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      position: relative;
+      z-index: 1;
+    }
+    .sobre-badge i { color: var(--vermelho); font-size: 1rem; flex-shrink: 0; }
+
+    .sobre-texto h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+    .sobre-texto .sec-tag { margin-bottom: 16px; }
+    .sobre-texto p {
+      color: var(--cinza-t);
+      line-height: 1.78;
+      margin-bottom: 16px;
+    }
+    .sobre-texto blockquote {
+      border-left: 3px solid var(--vermelho);
+      padding: 14px 0 14px 20px;
+      color: var(--azul);
+      font-style: italic;
+      font-size: 1rem;
+      margin: 28px 0;
+      line-height: 1.65;
+      background: rgba(10,36,99,0.04);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* ══════════════════════════════════════
+       MVV
+    ══════════════════════════════════════ */
+    #mvv {
+      background: var(--azul);
+      padding: 80px 0;
+    }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .mvv-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 36px 28px;
+      transition: background var(--tr), transform var(--tr);
+    }
+    .mvv-card:hover {
+      background: rgba(255,255,255,0.11);
+      transform: translateY(-4px);
+    }
+    .mvv-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(204,22,22,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #FF8080;
+      margin-bottom: 22px;
+    }
+    .mvv-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+    .mvv-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.68;
+    }
+    .valores-lista {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .valores-lista li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .valores-lista li i { color: var(--vermelho); font-size: 0.7rem; flex-shrink: 0; }
+
+    /* ══════════════════════════════════════
+       PRODUTOS
+    ══════════════════════════════════════ */
+    #produtos { background: var(--branco); }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .produto-card {
+      background: var(--cinza-f);
+      border: 1.5px solid var(--cinza-e);
+      border-radius: 14px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all var(--tr);
+    }
+    .produto-card:hover {
+      border-color: var(--azul);
+      box-shadow: 0 10px 36px var(--sombra);
+      transform: translateY(-5px);
+    }
+    .prod-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--azul-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      font-size: 1.8rem;
+      color: var(--azul);
+      transition: all var(--tr);
+    }
+    .produto-card:hover .prod-icon { background: var(--azul); color: var(--branco); }
+
+    .produto-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 10px;
+    }
+    .produto-card p {
+      font-size: 0.86rem;
+      color: var(--cinza-t);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .prod-marcas {
+      display: inline-block;
+      font-size: 0.70rem;
+      color: var(--vermelho);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      background: rgba(204,22,22,0.08);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ══════════════════════════════════════
+       MARCAS
+    ══════════════════════════════════════ */
+    #marcas { background: var(--cinza-f); }
+
+    .marcas-intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .marcas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .marca-item {
+      background: var(--branco);
+      border: 1.5px solid var(--cinza-e);
+      border-radius: 10px;
+      padding: 14px 26px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--azul);
+      letter-spacing: 0.05em;
+      transition: all var(--tr);
+    }
+    .marca-item:hover {
+      border-color: var(--azul);
+      box-shadow: 0 4px 16px var(--sombra);
+      transform: translateY(-2px);
+    }
+
+    /* ══════════════════════════════════════
+       DIFERENCIAIS
+    ══════════════════════════════════════ */
+    #diferenciais {
+      background:
+        linear-gradient(rgba(6,24,64,0.93), rgba(6,24,64,0.93)),
+        url('images/hero-bg.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
+    .dif-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .dif-card { text-align: center; }
+    .dif-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(204,22,22,0.20);
+      border: 1px solid rgba(204,22,22,0.30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+      color: #FF8080;
+    }
+    .dif-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--branco);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+    .dif-card p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════
+       DEPOIMENTOS
+    ══════════════════════════════════════ */
+    #depoimentos { background: var(--branco); }
+
+    .depo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .depo-card {
+      background: var(--cinza-f);
+      border: 1px solid var(--cinza-e);
+      border-radius: 14px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: box-shadow var(--tr), transform var(--tr);
+    }
+    .depo-card:hover {
+      box-shadow: 0 8px 32px var(--sombra);
+      transform: translateY(-3px);
+    }
+    .depo-stars { color: #F59E0B; font-size: 0.9rem; letter-spacing: 2px; }
+    .depo-texto {
+      font-size: 0.95rem;
+      color: var(--preto);
+      line-height: 1.7;
+      font-style: italic;
+      flex: 1;
+    }
+    .depo-autor {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cinza-e);
+    }
+    .depo-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--azul);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .depo-nome {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--azul);
+    }
+    .depo-local { font-size: 0.75rem; color: var(--cinza-t); }
+
+    /* ══════════════════════════════════════
+       CONTATO
+    ══════════════════════════════════════ */
+    #contato { background: var(--cinza-f); }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .contato-info { display: flex; flex-direction: column; gap: 16px; }
+    .contato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--branco);
+      border-radius: 12px;
+      border: 1px solid var(--cinza-e);
+      transition: border-color var(--tr), box-shadow var(--tr);
+    }
+    .contato-item:hover {
+      border-color: var(--azul);
+      box-shadow: 0 4px 16px var(--sombra);
+    }
+    .cc-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--azul-bg);
+      color: var(--azul);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: all var(--tr);
+    }
+    .contato-item:hover .cc-icon { background: var(--azul); color: var(--branco); }
+    .contato-item h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cinza-t);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .contato-item p,
+    .contato-item a {
+      font-size: 0.90rem;
+      color: var(--preto);
+      line-height: 1.5;
+    }
+    .contato-item a:hover { color: var(--azul); }
+
+    .btn-wpp-contato {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background: #16A34A;
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: background var(--tr);
+      letter-spacing: 0.03em;
+      margin-top: 4px;
+    }
+    .btn-wpp-contato:hover { background: #15803D; }
+
+    .contato-mapa {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px var(--sombra);
+      border: 1px solid var(--cinza-e);
+    }
+    .contato-mapa iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      display: block;
+    }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--azul-escuro);
+      color: rgba(255,255,255,0.65);
+      padding: 64px 0 0;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-logo {
+      height: 52px;
+      margin-bottom: 18px;
+      filter: brightness(0) invert(1);
+    }
+    .footer-brand p {
+      font-size: 0.86rem;
+      line-height: 1.72;
+      margin-bottom: 22px;
+      max-width: 280px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.92rem;
+      transition: all var(--tr);
+    }
+    .footer-social a:hover { background: var(--vermelho); color: var(--branco); }
+
+    footer h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--branco);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .footer-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-nav ul li a {
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.55);
+      transition: color var(--tr);
+    }
+    .footer-nav ul li a:hover { color: var(--branco); }
+
+    .footer-contato p {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .footer-contato i { color: var(--vermelho); margin-top: 3px; flex-shrink: 0; }
+
+    .footer-bottom {
+      text-align: center;
+      padding: 18px 0;
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.28);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ── WhatsApp flutuante ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #22C55E;
+      color: var(--branco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      box-shadow: 0 4px 18px rgba(34,197,94,0.40);
+      z-index: 900;
+      transition: background var(--tr), transform var(--tr);
+    }
+    .wa-float:hover { background: #16A34A; transform: scale(1.06); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVIDADE
+    ══════════════════════════════════════ */
+    @media (min-width: 1440px) {
+      .container { max-width: 1320px; }
+    }
+
+    @media (max-width: 1023px) {
+      .dif-grid  { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: span 2; }
+      /* Desativa parallax — bug iOS/Android */
+      #hero, #diferenciais {
+        background-attachment: scroll, scroll;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mvv-grid { grid-template-columns: 1fr; gap: 16px; }
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+      .depo-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .contato-grid { grid-template-columns: 1fr; }
+      .contato-mapa iframe { height: 340px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --header-h: 64px; }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .btn-header-wpp span { display: none; }
+      .hero-stats { padding: 16px 20px; }
+      .hero-stat { padding: 0 20px; }
+      .section { padding: 72px 0; }
+      .sec-header { margin-bottom: 44px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .footer-brand { grid-column: span 1; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 56px 0; }
+      .produtos-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+      .hero-stats { flex-direction: column; gap: 10px; padding: 20px 24px; }
+      .hero-stat { padding: 8px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.10); }
+      .hero-stat:last-child { border-bottom: none; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .dif-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .marcas-grid { gap: 10px; }
+      .marca-item { padding: 11px 18px; font-size: 0.80rem; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-h: 60px; }
+      .hero-logo { height: 58px; }
+      .sobre-card-principal { padding: 36px 28px; }
+      .anos-numero { font-size: 4rem; }
+      .sobre-badges { grid-template-columns: 1fr; }
+      .contato-mapa iframe { height: 280px; }
+      .dif-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    }
+
+    @media (max-width: 380px) {
+      :root { --header-h: 56px; }
+      .container { padding: 0 16px; }
+      .section { padding: 48px 0; }
+      .hero-logo { height: 50px; }
+      .mvv-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container header-inner">
+    <a href="#hero" class="header-logo" aria-label="Casa dos Colchões — início">
+      <img src="images/logo.png" alt="Logo Casa dos Colchões">
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#marcas">Marcas</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a href="https://wa.me/551935543961" class="btn-header-wpp" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>Falar pelo WhatsApp</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== MENU MOBILE ===== -->
+<nav id="navMenu" aria-label="Menu mobile" aria-hidden="true">
+  <a href="#sobre"        onclick="closeMenu()">Sobre</a>
+  <a href="#produtos"     onclick="closeMenu()">Produtos</a>
+  <a href="#marcas"       onclick="closeMenu()">Marcas</a>
+  <a href="#depoimentos"  onclick="closeMenu()">Depoimentos</a>
+  <a href="#contato"      onclick="closeMenu()">Contato</a>
+  <a href="https://wa.me/551935543961" target="_blank" onclick="closeMenu()" class="mob-cta">
+    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+  </a>
+</nav>
+
+
+<!-- ===== HERO ===== -->
+<section id="hero" aria-label="Apresentação">
+  <div class="container hero-inner">
+    <img src="images/logo.png" alt="Casa dos Colchões — Especialista em Colchões" class="hero-logo">
+
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Especialista em Colchões desde 2009
+    </div>
+
+    <h1>Casa dos<br><span>Colchões</span></h1>
+    <h2>Mais de 16 anos levando conforto, qualidade de sono e bem-estar para os lares de Leme e região.</h2>
+
+    <div class="hero-btns">
+      <a href="#produtos" class="btn btn-vermelho">
+        <i class="fas fa-bed" aria-hidden="true"></i> Ver produtos
+      </a>
+      <a href="https://wa.me/551935543961" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
+      </a>
+    </div>
+
+    <div class="hero-stats" role="list">
+      <div class="hero-stat" role="listitem">
+        <strong>+16</strong>
+        <span>Anos de mercado</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <strong>10+</strong>
+        <span>Marcas parceiras</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <strong>100%</strong>
+        <span>Entrega gratuita</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <strong>5★</strong>
+        <span>Avaliação dos clientes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FAIXA SLOGAN ===== -->
+<div class="faixa-slogan" aria-hidden="true">
+  <div class="faixa-inner">
+    <span><i class="fas fa-circle"></i></span>
+    <span>Especialista em Colchões</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Entrega e Montagem Gratuita</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Atendimento Personalizado</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Marcas Renomadas</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>+16 Anos de Experiência</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Especialista em Colchões</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Entrega e Montagem Gratuita</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Atendimento Personalizado</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>Marcas Renomadas</span>
+    <span><i class="fas fa-circle"></i></span>
+    <span>+16 Anos de Experiência</span>
+    <span><i class="fas fa-circle"></i></span>
+  </div>
+</div>
+
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div class="sobre-grid">
+
+      <div class="sobre-visual">
+        <div class="sobre-card-principal">
+          <div class="sobre-anos">
+            <div class="anos-numero">16</div>
+            <div class="anos-label">
+              <strong>Anos de<br>experiência</strong>
+              <span>no mercado</span>
+            </div>
+          </div>
+          <p>De vendedora de móveis e eletrônicos a referência em colchões em Leme/SP. Uma história construída com dedicação, aprendizado e compromisso com o bem-estar dos nossos clientes.</p>
+          <div class="sobre-badges">
+            <div class="sobre-badge"><i class="fas fa-truck-fast"></i> Entrega rápida</div>
+            <div class="sobre-badge"><i class="fas fa-tools"></i> Montagem inclusa</div>
+            <div class="sobre-badge"><i class="fas fa-shield-halved"></i> Produtos de qualidade</div>
+            <div class="sobre-badge"><i class="fas fa-star"></i> Atend. personalizado</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sobre-texto">
+        <span class="sec-tag">Nossa história</span>
+        <h2>De um recomeço, nasceu uma especialidade</h2>
+        <p>A Casa dos Colchões – Leme SP nasceu com o propósito de oferecer qualidade e conforto para os lares da nossa região. No início da nossa trajetória, atuávamos no mercado com a comercialização de móveis e eletrônicos, sempre buscando atender as necessidades dos nossos clientes com dedicação e responsabilidade.</p>
+        <p>Com o passar dos anos, identificamos a importância de proporcionar mais do que produtos: queríamos entregar bem-estar e qualidade de vida. Foi então que direcionamos nosso foco e nos especializamos no segmento de colchões e camas box.</p>
+        <blockquote>
+          <i class="fas fa-quote-left" aria-hidden="true"></i>
+          Hoje, após mais de 16 anos de experiência no mercado, nos consolidamos como referência em Leme e região, com atendimento personalizado e atenção especial a cada cliente.
+        </blockquote>
+        <a href="#contato" class="btn btn-azul">
+          <i class="fas fa-phone" aria-hidden="true"></i> Fale conosco
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== MVV ===== -->
+<section id="mvv" aria-label="Missão, Visão e Valores">
+  <div class="container">
+    <div class="sec-header sec-header-inv">
+      <span class="sec-tag">Quem somos</span>
+      <h2>Nossa essência</h2>
+      <p>Os pilares que guiam cada atendimento e cada produto que entregamos.</p>
+    </div>
+    <div class="mvv-grid">
+      <div class="mvv-card">
+        <div class="mvv-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+        <h3>Missão</h3>
+        <p>Proporcionar conforto, qualidade de vida e bem-estar aos nossos clientes, oferecendo colchões e produtos de descanso com excelente custo-benefício, atendimento de confiança e honestidade.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
+        <h3>Visão</h3>
+        <p>Ser referência em Leme e região no segmento de colchões, reconhecida pela qualidade dos produtos, excelência no atendimento e compromisso com a satisfação dos clientes.</p>
+      </div>
+      <div class="mvv-card">
+        <div class="mvv-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
+        <h3>Valores</h3>
+        <ul class="valores-lista">
+          <li><i class="fas fa-circle" aria-hidden="true"></i> Compromisso com o cliente</li>
+          <li><i class="fas fa-circle" aria-hidden="true"></i> Qualidade e durabilidade</li>
+          <li><i class="fas fa-circle" aria-hidden="true"></i> Honestidade e transparência</li>
+          <li><i class="fas fa-circle" aria-hidden="true"></i> Agilidade no atendimento</li>
+          <li><i class="fas fa-circle" aria-hidden="true"></i> Respeito e inovação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PRODUTOS ===== -->
+<section id="produtos" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">O que vendemos</span>
+      <h2>Nossos produtos</h2>
+      <p>Trabalhamos com as melhores marcas do mercado para garantir qualidade, durabilidade e o conforto que você merece.</p>
+    </div>
+    <div class="produtos-grid">
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-bed" aria-hidden="true"></i></div>
+        <h3>Colchões</h3>
+        <p>Colchões de alta qualidade com diferentes tecnologias e densidades, ideais para garantir um sono saudável e confortável.</p>
+        <span class="prod-marcas">Castor · D'Angelis · Prorelax · Paropas · Passalacqua</span>
+      </div>
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-moon" aria-hidden="true"></i></div>
+        <h3>Camas Box</h3>
+        <p>Estruturas resistentes e modernas em diversos tamanhos e modelos, incluindo opções com baú para melhor aproveitamento de espaço.</p>
+        <span class="prod-marcas">Castor · V-Joy</span>
+      </div>
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-couch" aria-hidden="true"></i></div>
+        <h3>Cabeceiras</h3>
+        <p>Modelos elegantes que valorizam o ambiente e trazem mais aconchego ao seu quarto, com variedade de estilos e acabamentos.</p>
+        <span class="prod-marcas">Styllus do Brasil</span>
+      </div>
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+        <h3>Travesseiros</h3>
+        <p>Conforto e suporte ideais para o seu descanso, com opções que se adaptam a diferentes posições de dormir.</p>
+        <span class="prod-marcas">Castor · Duoflex · Lavive Enxovais</span>
+      </div>
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
+        <h3>Roupas de Cama</h3>
+        <p>Jogos completos com tecidos macios e duráveis, pensados para proporcionar conforto e deixar seu quarto ainda mais bonito.</p>
+        <span class="prod-marcas">Sulbrasil</span>
+      </div>
+
+      <div class="produto-card">
+        <div class="prod-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
+        <h3>Entrega e montagem gratuita</h3>
+        <p>Realizamos entrega e montagem gratuita em Leme/SP e região, com agilidade e cuidado para garantir sua satisfação total.</p>
+        <span class="prod-marcas">Atendemos toda a região</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== MARCAS ===== -->
+<section id="marcas" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">Parceiros</span>
+      <h2>Marcas com as quais trabalhamos</h2>
+      <p>Selecionamos criteriosamente cada fabricante para garantir produtos de qualidade, durabilidade e conforto real.</p>
+    </div>
+    <div class="marcas-grid">
+      <div class="marca-item">Castor</div>
+      <div class="marca-item">D'Angelis — Anjos</div>
+      <div class="marca-item">Prorelax</div>
+      <div class="marca-item">Paropas</div>
+      <div class="marca-item">Passalacqua</div>
+      <div class="marca-item">V-Joy</div>
+      <div class="marca-item">Styllus do Brasil</div>
+      <div class="marca-item">Duoflex</div>
+      <div class="marca-item">Lavive Enxovais</div>
+      <div class="marca-item">Sulbrasil</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section id="diferenciais" class="section" aria-label="Nossos diferenciais">
+  <div class="container">
+    <div class="sec-header sec-header-inv">
+      <span class="sec-tag">Por que nos escolher</span>
+      <h2>Nossos diferenciais</h2>
+      <p>O que torna a Casa dos Colchões a escolha certa para o seu sono de qualidade.</p>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-card">
+        <div class="dif-icon"><i class="fas fa-medal" aria-hidden="true"></i></div>
+        <h3>+16 anos de experiência</h3>
+        <p>Mais de uma década no mercado especializado em colchões, com conhecimento aprofundado para orientar cada cliente.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
+        <h3>Entrega e montagem gratuita</h3>
+        <p>Entregamos e montamos seu produto gratuitamente em Leme e região, com agilidade e cuidado.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon"><i class="fas fa-user-check" aria-hidden="true"></i></div>
+        <h3>Atendimento personalizado</h3>
+        <p>Cada cliente é único. Analisamos suas necessidades para indicar o colchão ideal para o seu sono.</p>
+      </div>
+      <div class="dif-card">
+        <div class="dif-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+        <h3>Marcas de confiança</h3>
+        <p>Trabalhamos apenas com marcas reconhecidas, garantindo qualidade, durabilidade e satisfação garantida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section id="depoimentos" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">Clientes satisfeitos</span>
+      <h2>O que dizem sobre nós</h2>
+      <p>A opinião de quem já dormiu melhor depois de passar pela Casa dos Colchões.</p>
+    </div>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Ótimo atendimento e entrega super rápida! Fiquei muito satisfeito com a qualidade do produto e o cuidado da equipe."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">C</div>
+          <div>
+            <div class="depo-nome">Cliente satisfeito</div>
+            <div class="depo-local">Leme, SP</div>
+          </div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Comprei meu colchão e amei a qualidade! Finalmente consigo dormir bem de novo. Recomendo muito a Casa dos Colchões."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">A</div>
+          <div>
+            <div class="depo-nome">Cliente satisfeita</div>
+            <div class="depo-local">Leme, SP</div>
+          </div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"Preço justo e muita atenção com o cliente! Me explicaram tudo sobre os modelos e me ajudaram a escolher o ideal para mim."</p>
+        <div class="depo-autor">
+          <div class="depo-avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="depo-nome">Cliente satisfeito</div>
+            <div class="depo-local">Leme, SP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== CONTATO ===== -->
+<section id="contato" class="section">
+  <div class="container">
+    <div class="sec-header">
+      <span class="sec-tag">Fale conosco</span>
+      <h2>Entre em contato</h2>
+      <p>Estamos prontos para atendê-lo e ajudar a encontrar o colchão perfeito para você.</p>
+    </div>
+    <div class="contato-grid">
+
+      <div class="contato-info">
+        <div class="contato-item">
+          <div class="cc-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+          <div>
+            <h3>Endereço</h3>
+            <p>Rua Padre Julião, 180 — Centro<br>Leme/SP</p>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="cc-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+          <div>
+            <h3>Telefone</h3>
+            <p><a href="tel:+551935543961">(19) 3554-3961</a></p>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="cc-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+          <div>
+            <h3>E-mail</h3>
+            <p><a href="mailto:cscolchoes@terra.com.br">cscolchoes@terra.com.br</a></p>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="cc-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+          <div>
+            <h3>Horário de funcionamento</h3>
+            <p>Segunda a sexta: 08h30 às 18h00<br>Sábado: 09h00 às 13h00</p>
+          </div>
+        </div>
+        <a href="https://wa.me/551935543961" class="btn-wpp-contato" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar pelo WhatsApp
+        </a>
+      </div>
+
+      <div class="contato-mapa">
+        <iframe
+          src="https://www.google.com/maps?q=Rua+Padre+Julião+180+Centro+Leme+SP+Brasil&output=embed"
+          title="Localização Casa dos Colchões — Rua Padre Julião, 180, Leme/SP"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Casa dos Colchões" class="footer-logo">
+        <p>Especialista em colchões, camas box, cabeceiras e travesseiros há mais de 16 anos. Qualidade, conforto e atendimento personalizado em Leme/SP.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/casadoscolchoescs/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Casa dos Colchões">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.instagram.com/casadoscolchoesleme/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Casa dos Colchões">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/551935543961" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Casa dos Colchões">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Nossa história</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contato">
+        <h4>Contato</h4>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Padre Julião, 180 — Leme/SP</p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> (19) 3554-3961</p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> cscolchoes@terra.com.br</p>
+        <p><i class="fas fa-clock" aria-hidden="true"></i> Seg–Sex: 08h30–18h | Sáb: 09h–13h</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Casa dos Colchões · CNPJ 10.176.524/0001-72 · Leme, SP</p>
+  </div>
+</footer>
+
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/551935543961" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Casa dos Colchões no WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- Rodapé MonteSite - Atualização Automática -->
+<div id="montesite-footer-badge"></div>
+<script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+
+<script>
+  // ── Menu mobile ──────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+
+  hamburger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    hamburger.classList.toggle('ativo', open);
+    hamburger.setAttribute('aria-expanded', open);
+    navMenu.setAttribute('aria-hidden', !open);
+  });
+
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('ativo');
+    hamburger.setAttribute('aria-expanded', false);
+    navMenu.setAttribute('aria-hidden', true);
+  }
+
+  // Fecha ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // ── Header ao rolar ──────────────────────────────────
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Nav ativo por seção ──────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.desktop-nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('ativo', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
