@@ -643,7 +643,12 @@
     /* ══════════════════════════════════════
        PRODUTOS
     ══════════════════════════════════════ */
-    #produtos { background: var(--branco); }
+    #produtos {
+      background:
+        linear-gradient(rgba(248,250,252,0.93), rgba(248,250,252,0.93)),
+        url('images/bg-produtos.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .produtos-grid {
       display: grid;
@@ -785,7 +790,12 @@
     /* ══════════════════════════════════════
        DEPOIMENTOS
     ══════════════════════════════════════ */
-    #depoimentos { background: var(--branco); }
+    #depoimentos {
+      background:
+        linear-gradient(rgba(248,250,252,0.93), rgba(248,250,252,0.93)),
+        url('images/bg-depoimentos.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .depo-grid {
       display: grid;
@@ -846,7 +856,12 @@
     /* ══════════════════════════════════════
        CONTATO
     ══════════════════════════════════════ */
-    #contato { background: var(--cinza-f); }
+    #contato {
+      background:
+        linear-gradient(rgba(248,250,252,0.95), rgba(248,250,252,0.95)),
+        url('images/bg-contato.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .contato-grid {
       display: grid;
@@ -1019,7 +1034,12 @@
     /* ══════════════════════════════════════
        GALERIA / CARROSSEL
     ══════════════════════════════════════ */
-    #galeria { background: var(--branco); }
+    #galeria {
+      background:
+        linear-gradient(rgba(248,250,252,0.93), rgba(248,250,252,0.93)),
+        url('images/bg-galeria.jpg') center / cover no-repeat;
+      background-attachment: fixed, fixed;
+    }
 
     .car-wrap {
       position: relative;
@@ -1192,7 +1212,8 @@
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: span 2; }
       /* Desativa parallax — bug iOS/Android */
-      #hero, #sobre, #mvv, #marcas, #diferenciais {
+      #hero, #sobre, #mvv, #marcas, #diferenciais,
+      #produtos, #galeria, #depoimentos, #contato {
         background-attachment: scroll, scroll;
       }
     }
