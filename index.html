@@ -1178,6 +1178,55 @@
       white-space: nowrap;
     }
 
+    /* ══════════════════════════════════════
+       EFEITOS / ANIMAÇÕES
+    ══════════════════════════════════════ */
+
+    /* Barra de progresso de leitura */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--vermelho);
+      z-index: 1100;
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    /* Pulse no ponto da badge */
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,153,153,0.70); }
+      60%       { box-shadow: 0 0 0 7px rgba(255,153,153,0); }
+    }
+    .badge-dot { animation: badgePulse 2.2s ease infinite; }
+
+    /* Reveal on scroll */
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      opacity: 0;
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal       { transform: translateY(36px); }
+    .reveal-left  { transform: translateX(-44px); }
+    .reveal-right { transform: translateX(44px); }
+
+    .reveal.visible,
+    .reveal-left.visible,
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+    /* Delays escalonados */
+    .d1 { transition-delay: 0.10s; }
+    .d2 { transition-delay: 0.20s; }
+    .d3 { transition-delay: 0.30s; }
+    .d4 { transition-delay: 0.40s; }
+    .d5 { transition-delay: 0.50s; }
+    .d6 { transition-delay: 0.60s; }
+
     /* ── WhatsApp flutuante ── */
     .wa-float {
       position: fixed;
@@ -1344,6 +1393,8 @@
 </head>
 <body>
 
+<div id="progress-bar" aria-hidden="true"></div>
+
 <!-- ===== HEADER ===== -->
 <header id="header">
   <div class="container header-inner">
@@ -1482,7 +1533,7 @@
   <div class="container">
     <div class="sobre-grid">
 
-      <div class="sobre-visual">
+      <div class="sobre-visual reveal-left">
         <div class="sobre-card-principal">
           <div class="sobre-anos">
             <div class="anos-numero">16</div>
@@ -1501,7 +1552,7 @@
         </div>
       </div>
 
-      <div class="sobre-texto">
+      <div class="sobre-texto reveal-right">
         <span class="sec-tag">Nossa história</span>
         <h2>De um recomeço, nasceu uma especialidade</h2>
         <p>A Casa dos Colchões – Leme SP nasceu com o propósito de oferecer qualidade e conforto para os lares da nossa região. No início da nossa trajetória, atuávamos no mercado com a comercialização de móveis e eletrônicos, sempre buscando atender as necessidades dos nossos clientes com dedicação e responsabilidade.</p>
@@ -1523,23 +1574,23 @@
 <!-- ===== MVV ===== -->
 <section id="mvv" aria-label="Missão, Visão e Valores">
   <div class="container">
-    <div class="sec-header sec-header-inv">
+    <div class="sec-header sec-header-inv reveal">
       <span class="sec-tag">Quem somos</span>
       <h2>Nossa essência</h2>
       <p>Os pilares que guiam cada atendimento e cada produto que entregamos.</p>
     </div>
     <div class="mvv-grid">
-      <div class="mvv-card">
+      <div class="mvv-card reveal d1">
         <div class="mvv-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
         <h3>Missão</h3>
         <p>Proporcionar conforto, qualidade de vida e bem-estar aos nossos clientes, oferecendo colchões e produtos de descanso com excelente custo-benefício, atendimento de confiança e honestidade.</p>
       </div>
-      <div class="mvv-card">
+      <div class="mvv-card reveal d2">
         <div class="mvv-icon"><i class="fas fa-eye" aria-hidden="true"></i></div>
         <h3>Visão</h3>
         <p>Ser referência em Leme e região no segmento de colchões, reconhecida pela qualidade dos produtos, excelência no atendimento e compromisso com a satisfação dos clientes.</p>
       </div>
-      <div class="mvv-card">
+      <div class="mvv-card reveal d3">
         <div class="mvv-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
         <h3>Valores</h3>
         <ul class="valores-lista">
@@ -1558,49 +1609,49 @@
 <!-- ===== PRODUTOS ===== -->
 <section id="produtos" class="section">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-header reveal">
       <span class="sec-tag">O que vendemos</span>
       <h2>Nossos produtos</h2>
       <p>Trabalhamos com as melhores marcas do mercado para garantir qualidade, durabilidade e o conforto que você merece.</p>
     </div>
     <div class="produtos-grid">
 
-      <div class="produto-card">
+      <div class="produto-card reveal d1">
         <div class="prod-icon"><i class="fas fa-bed" aria-hidden="true"></i></div>
         <h3>Colchões</h3>
         <p>Colchões de alta qualidade com diferentes tecnologias e densidades, ideais para garantir um sono saudável e confortável.</p>
         <span class="prod-marcas">Castor · D'Angelis · Prorelax · Paropas · Passalacqua</span>
       </div>
 
-      <div class="produto-card">
+      <div class="produto-card reveal d2">
         <div class="prod-icon"><i class="fas fa-moon" aria-hidden="true"></i></div>
         <h3>Camas Box</h3>
         <p>Estruturas resistentes e modernas em diversos tamanhos e modelos, incluindo opções com baú para melhor aproveitamento de espaço.</p>
         <span class="prod-marcas">Castor · V-Joy</span>
       </div>
 
-      <div class="produto-card">
+      <div class="produto-card reveal d3">
         <div class="prod-icon"><i class="fas fa-couch" aria-hidden="true"></i></div>
         <h3>Cabeceiras</h3>
         <p>Modelos elegantes que valorizam o ambiente e trazem mais aconchego ao seu quarto, com variedade de estilos e acabamentos.</p>
         <span class="prod-marcas">Styllus do Brasil</span>
       </div>
 
-      <div class="produto-card">
+      <div class="produto-card reveal d4">
         <div class="prod-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
         <h3>Travesseiros</h3>
         <p>Conforto e suporte ideais para o seu descanso, com opções que se adaptam a diferentes posições de dormir.</p>
         <span class="prod-marcas">Castor · Duoflex · Lavive Enxovais</span>
       </div>
 
-      <div class="produto-card">
+      <div class="produto-card reveal d5">
         <div class="prod-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
         <h3>Roupas de Cama</h3>
         <p>Jogos completos com tecidos macios e duráveis, pensados para proporcionar conforto e deixar seu quarto ainda mais bonito.</p>
         <span class="prod-marcas">Sulbrasil</span>
       </div>
 
-      <div class="produto-card">
+      <div class="produto-card reveal d6">
         <div class="prod-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
         <h3>Entrega e montagem gratuita</h3>
         <p>Realizamos entrega e montagem gratuita em Leme/SP e região, com agilidade e cuidado para garantir sua satisfação total.</p>
@@ -1615,12 +1666,12 @@
 <!-- ===== MARCAS ===== -->
 <section id="marcas" class="section">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-header reveal">
       <span class="sec-tag">Parceiros</span>
       <h2>Marcas com as quais trabalhamos</h2>
       <p>Selecionamos criteriosamente cada fabricante para garantir produtos de qualidade, durabilidade e conforto real.</p>
     </div>
-    <div class="marcas-grid">
+    <div class="marcas-grid reveal d1">
       <div class="marca-item">Castor</div>
       <div class="marca-item">D'Angelis — Anjos</div>
       <div class="marca-item">Prorelax</div>
@@ -1639,28 +1690,28 @@
 <!-- ===== DIFERENCIAIS ===== -->
 <section id="diferenciais" class="section" aria-label="Nossos diferenciais">
   <div class="container">
-    <div class="sec-header sec-header-inv">
+    <div class="sec-header sec-header-inv reveal">
       <span class="sec-tag">Por que nos escolher</span>
       <h2>Nossos diferenciais</h2>
       <p>O que torna a Casa dos Colchões a escolha certa para o seu sono de qualidade.</p>
     </div>
     <div class="dif-grid">
-      <div class="dif-card">
+      <div class="dif-card reveal d1">
         <div class="dif-icon"><i class="fas fa-medal" aria-hidden="true"></i></div>
         <h3>+16 anos de experiência</h3>
         <p>Mais de uma década no mercado especializado em colchões, com conhecimento aprofundado para orientar cada cliente.</p>
       </div>
-      <div class="dif-card">
+      <div class="dif-card reveal d2">
         <div class="dif-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
         <h3>Entrega e montagem gratuita</h3>
         <p>Entregamos e montamos seu produto gratuitamente em Leme e região, com agilidade e cuidado.</p>
       </div>
-      <div class="dif-card">
+      <div class="dif-card reveal d3">
         <div class="dif-icon"><i class="fas fa-user-check" aria-hidden="true"></i></div>
         <h3>Atendimento personalizado</h3>
         <p>Cada cliente é único. Analisamos suas necessidades para indicar o colchão ideal para o seu sono.</p>
       </div>
-      <div class="dif-card">
+      <div class="dif-card reveal d4">
         <div class="dif-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
         <h3>Marcas de confiança</h3>
         <p>Trabalhamos apenas com marcas reconhecidas, garantindo qualidade, durabilidade e satisfação garantida.</p>
@@ -1673,12 +1724,12 @@
 <!-- ===== GALERIA ===== -->
 <section id="galeria" class="section">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-header reveal">
       <span class="sec-tag">Nosso espaço</span>
       <h2>Galeria</h2>
       <p>Conheça de perto a qualidade dos nossos produtos e do nosso estoque.</p>
     </div>
-    <div class="car-wrap">
+    <div class="car-wrap reveal d1">
       <div class="car-track" id="carTrack"></div>
       <button class="car-arrow prev" id="carPrev" aria-label="Imagem anterior">
         <i class="fas fa-chevron-left" aria-hidden="true"></i>
@@ -1710,13 +1761,13 @@
 <!-- ===== DEPOIMENTOS ===== -->
 <section id="depoimentos" class="section">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-header reveal">
       <span class="sec-tag">Clientes satisfeitos</span>
       <h2>O que dizem sobre nós</h2>
       <p>A opinião de quem já dormiu melhor depois de passar pela Casa dos Colchões.</p>
     </div>
     <div class="depo-grid">
-      <div class="depo-card">
+      <div class="depo-card reveal d1">
         <div class="depo-stars">★★★★★</div>
         <p class="depo-texto">"Ótimo atendimento e entrega super rápida! Fiquei muito satisfeito com a qualidade do produto e o cuidado da equipe."</p>
         <div class="depo-autor">
@@ -1727,7 +1778,7 @@
           </div>
         </div>
       </div>
-      <div class="depo-card">
+      <div class="depo-card reveal d2">
         <div class="depo-stars">★★★★★</div>
         <p class="depo-texto">"Comprei meu colchão e amei a qualidade! Finalmente consigo dormir bem de novo. Recomendo muito a Casa dos Colchões."</p>
         <div class="depo-autor">
@@ -1738,7 +1789,7 @@
           </div>
         </div>
       </div>
-      <div class="depo-card">
+      <div class="depo-card reveal d3">
         <div class="depo-stars">★★★★★</div>
         <p class="depo-texto">"Preço justo e muita atenção com o cliente! Me explicaram tudo sobre os modelos e me ajudaram a escolher o ideal para mim."</p>
         <div class="depo-autor">
@@ -1757,14 +1808,14 @@
 <!-- ===== CONTATO ===== -->
 <section id="contato" class="section">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-header reveal">
       <span class="sec-tag">Fale conosco</span>
       <h2>Entre em contato</h2>
       <p>Estamos prontos para atendê-lo e ajudar a encontrar o colchão perfeito para você.</p>
     </div>
     <div class="contato-grid">
 
-      <div class="contato-info">
+      <div class="contato-info reveal-left">
         <div class="contato-item">
           <div class="cc-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
           <div>
@@ -1798,7 +1849,7 @@
         </a>
       </div>
 
-      <div class="contato-mapa">
+      <div class="contato-mapa reveal-right">
         <iframe
           src="https://www.google.com/maps?q=Rua+Padre+Julião+180+Centro+Leme+SP+Brasil&output=embed"
           title="Localização Casa dos Colchões — Rua Padre Julião, 180, Leme/SP"
@@ -2021,6 +2072,55 @@
     if (e.key === 'ArrowLeft')   lbNavegar(-1);
     if (e.key === 'ArrowRight')  lbNavegar(1);
   });
+
+  // ── Barra de progresso de leitura ────────────────────
+  const progressBar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrollTop  = window.scrollY;
+    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight * 100) : 0) + '%';
+  }, { passive: true });
+
+  // ── Reveal on scroll ─────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ── Contador animado nos stats do hero ───────────────
+  function animarContador(el, alvo, prefixo, sufixo) {
+    const dur = 1800;
+    const inicio = performance.now();
+    (function tick(agora) {
+      const p = Math.min((agora - inicio) / dur, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefixo + Math.floor(ease * alvo) + sufixo;
+      if (p < 1) requestAnimationFrame(tick);
+    })(inicio);
+  }
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) {
+    const contObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const [s0, s1, s2, s3] = entry.target.querySelectorAll('strong');
+          animarContador(s0, 16, '+', '');
+          animarContador(s1, 10, '',  '+');
+          animarContador(s2, 100, '', '%');
+          // s3 (5★) — apenas aparece com fade, sem contador numérico
+          contObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    contObs.observe(heroStats);
+  }
 </script>
 </body>
 </html>
