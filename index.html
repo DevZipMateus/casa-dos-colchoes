@@ -381,19 +381,21 @@
     .hero-stats {
       display: flex;
       gap: 0;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: 12px;
-      padding: 20px 32px;
-      width: fit-content;
+      padding: 20px 24px;
+      width: 100%;
     }
     .hero-stat {
       display: flex;
       flex-direction: column;
       gap: 3px;
-      padding: 0 32px;
+      padding: 0 18px;
       border-right: 1px solid rgba(255,255,255,0.12);
+      flex: 1;
+      min-width: 0;
     }
     .hero-stat:first-child { padding-left: 0; }
     .hero-stat:last-child  { padding-right: 0; border-right: none; }
