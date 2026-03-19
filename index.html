@@ -1393,12 +1393,14 @@
     @media (min-width: 2560px) {
       .container { max-width: 2100px; }
       .section { padding: 140px 0; }
+      .depo-carousel { max-width: 860px; }
     }
 
     /* Full HD (≥1920px) */
     @media (min-width: 1920px) {
       .container { max-width: 1680px; }
       .section { padding: 120px 0; }
+      .depo-carousel { max-width: 780px; }
     }
 
     /* Wide HD (≥1440px) */
@@ -1406,18 +1408,27 @@
       .container { max-width: 1320px; }
     }
 
-    /* Laptop pequeno (≤1280px) */
+    /* Laptop médio — hero tem 2 colunas, stats ficam estreitas (≤1280px) */
     @media (max-width: 1280px) {
       .sobre-grid { gap: 48px; }
       .footer-inner { gap: 36px; }
-      .hero-inner { gap: 40px; }
+      .hero-inner { gap: 36px; }
+      /* Compacta as stats para caberem na coluna estreita */
+      .hero-stats { padding: 16px 18px; }
+      .hero-stat { padding: 0 10px; }
+      .hero-stat strong { font-size: 1.65rem; }
+      .hero-stat span { font-size: 0.65rem; letter-spacing: 0.04em; }
     }
 
-    /* Tablet landscape (≤1023px) */
+    /* Tablet landscape (≤1023px) — hero vira 1 coluna, restaura stats */
     @media (max-width: 1023px) {
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .hero-video-wrap { max-width: 600px; margin: 0 auto; width: 100%; }
-      .hero-stats { width: 100%; }
+      /* Restaura tamanhos das stats (hero ocupa largura total) */
+      .hero-stats { padding: 18px 24px; width: 100%; }
+      .hero-stat { padding: 0 16px; }
+      .hero-stat strong { font-size: 1.8rem; }
+      .hero-stat span { font-size: 0.70rem; letter-spacing: 0.05em; }
       .dif-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .mvv-grid { grid-template-columns: repeat(2, 1fr); }
       .produtos-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1438,6 +1449,7 @@
       .contato-grid { grid-template-columns: 1fr; }
       .contato-mapa iframe { height: 340px; }
       .car-slide img { max-height: 420px; }
+      .depo-carousel { max-width: 540px; }
     }
 
     /* Mobile landscape / tablet pequeno (≤768px) */
@@ -1446,8 +1458,9 @@
       .desktop-nav { display: none; }
       .hamburger { display: flex; }
       .btn-header-wpp span { display: none; }
-      .hero-stats { padding: 16px 20px; }
-      .hero-stat { padding: 0 20px; }
+      .hero-stats { padding: 14px 18px; }
+      .hero-stat { padding: 0 12px; }
+      .hero-stat strong { font-size: 1.6rem; }
       .section { padding: 72px 0; }
       .sec-header { margin-bottom: 44px; }
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
@@ -1455,9 +1468,10 @@
       .car-slide img { max-height: 360px; }
       .car-arrow { width: 40px; height: 40px; font-size: 0.85rem; }
       .lb-arrow { width: 46px; height: 46px; }
-      .depo-card { padding: 30px 24px; }
-      .depo-arrow.prev { left: -10px; }
-      .depo-arrow.next { right: -10px; }
+      .depo-card { padding: 28px 22px; }
+      .depo-arrow.prev { left: -8px; }
+      .depo-arrow.next { right: -8px; }
+      .depo-arrow { width: 38px; height: 38px; }
       .produto-card { padding: 28px 20px; }
       .contato-mapa iframe { height: 300px; }
     }
@@ -1467,19 +1481,31 @@
       .section { padding: 56px 0; }
       .sec-header { margin-bottom: 36px; }
       .produtos-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-      .depo-arrow { display: none; }
-      .hero-stats { flex-direction: column; gap: 10px; padding: 20px 24px; }
-      .hero-stat { padding: 8px 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.10); }
+      /* Stats viram coluna vertical */
+      .hero-stats { flex-direction: column; gap: 0; padding: 16px 22px; width: 100%; }
+      .hero-stat {
+        padding: 10px 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+        flex: none;
+      }
       .hero-stat:last-child { border-bottom: none; }
+      .hero-stat strong { font-size: 1.6rem; min-width: 52px; }
+      .hero-stat span { font-size: 0.74rem; letter-spacing: 0.04em; }
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { width: 100%; justify-content: center; }
       .dif-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .marcas-grid { gap: 10px; }
-      .marca-item { padding: 11px 18px; font-size: 0.80rem; }
+      .marca-item { padding: 11px 16px; font-size: 0.80rem; }
       .car-slide img { max-height: 300px; }
       .car-arrow { width: 36px; height: 36px; left: 8px; }
       .car-arrow.next { left: auto; right: 8px; }
       .footer-inner { gap: 22px; }
+      .depo-arrow { display: none; }
+      .depo-carousel { padding: 0 0 8px; }
     }
 
     /* Mobile médio (≤480px) */
@@ -1487,8 +1513,8 @@
       :root { --header-h: 60px; }
       .hero-logo { height: 58px; }
       .hero-inner { padding: 60px 0; }
-      .sobre-card-principal { padding: 36px 28px; }
-      .anos-numero { font-size: 4rem; }
+      .sobre-card-principal { padding: 36px 24px; }
+      .anos-numero { font-size: 3.8rem; }
       .sobre-badges { grid-template-columns: 1fr; }
       .contato-mapa iframe { height: 280px; }
       .dif-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
@@ -1498,6 +1524,7 @@
       .lb-arrow.next { right: 8px; }
       .mvv-card { padding: 28px 20px; }
       .footer-inner { gap: 20px; }
+      .depo-card { padding: 24px 18px; }
     }
 
     /* Mobile pequeno (≤380px) */
@@ -1509,10 +1536,11 @@
       .hero-logo { height: 50px; }
       .hero-inner { padding: 48px 0; }
       .hero-btns { gap: 10px; }
-      .btn { padding: 12px 24px; }
-      .mvv-card { padding: 28px 20px; }
+      .btn { padding: 12px 22px; }
+      .mvv-card { padding: 26px 18px; }
       .car-slide img { max-height: 220px; }
       .footer-bottom { font-size: 0.68rem; }
+      .hero-stat strong { font-size: 1.4rem; min-width: 46px; }
     }
 
     /* Mobile muito pequeno (≤320px) */
@@ -1520,12 +1548,13 @@
       .container { padding: 0 14px; }
       .hero-badge { font-size: 0.65rem; padding: 5px 12px; }
       .btn { padding: 11px 18px; font-size: 0.82rem; }
-      .sobre-card-principal { padding: 28px 18px; }
-      .anos-numero { font-size: 3.2rem; }
-      .mvv-card { padding: 22px 16px; }
-      .produto-card { padding: 22px 16px; }
-      .depo-card { padding: 20px 16px; }
-      .contato-item { padding: 16px; }
+      .sobre-card-principal { padding: 28px 16px; }
+      .anos-numero { font-size: 3rem; }
+      .mvv-card { padding: 22px 14px; }
+      .produto-card { padding: 22px 14px; }
+      .depo-card { padding: 20px 14px; }
+      .contato-item { padding: 14px; }
+      .hero-stat strong { font-size: 1.25rem; min-width: 40px; }
     }
   </style>
 </head>
@@ -2390,6 +2419,16 @@
 
       document.getElementById('depoPrev').addEventListener('click', () => { depoIr(depoIdx - 1); depoReiniciar(); });
       document.getElementById('depoNext').addEventListener('click', () => { depoIr(depoIdx + 1); depoReiniciar(); });
+
+      // Swipe touch
+      let swipeX = 0;
+      const trackWrap = depoTrack.parentElement;
+      trackWrap.addEventListener('touchstart', e => { swipeX = e.touches[0].clientX; }, { passive: true });
+      trackWrap.addEventListener('touchend', e => {
+        const diff = swipeX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { depoIr(depoIdx + (diff > 0 ? 1 : -1)); depoReiniciar(); }
+      }, { passive: true });
+
       depoReiniciar();
     }
 
