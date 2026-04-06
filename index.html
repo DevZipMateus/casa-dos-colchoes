@@ -666,50 +666,87 @@
       padding: 36px 28px;
       text-align: center;
       transition: all var(--tr);
+      position: relative;
+      overflow: hidden;
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .produto-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(10,36,99,0.72) 0%, rgba(10,36,99,0.88) 100%);
+      border-radius: 14px;
+      z-index: 1;
+      transition: background var(--tr);
     }
     .produto-card:hover {
       border-color: var(--azul);
-      box-shadow: 0 18px 52px rgba(10,36,99,0.20), 0 0 0 3px rgba(10,36,99,0.06);
+      box-shadow: 0 18px 52px rgba(10,36,99,0.30), 0 0 0 3px rgba(10,36,99,0.12);
       transform: translateY(-8px);
+    }
+    .produto-card:hover::before {
+      background: linear-gradient(160deg, rgba(10,36,99,0.82) 0%, rgba(10,36,99,0.94) 100%);
     }
     .prod-icon {
       width: 72px;
       height: 72px;
       border-radius: 16px;
-      background: var(--azul-bg);
+      background: rgba(255,255,255,0.18);
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 22px;
       font-size: 1.8rem;
-      color: var(--azul);
+      color: #fff;
       transition: all var(--tr);
+      position: relative;
+      z-index: 2;
     }
-    .produto-card:hover .prod-icon { background: var(--azul); color: var(--branco); }
+    .produto-card:hover .prod-icon { background: rgba(255,255,255,0.30); color: #fff; }
 
     .produto-card h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--azul);
+      color: #fff;
       margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
     }
     .produto-card p {
       font-size: 0.86rem;
-      color: var(--cinza-t);
+      color: rgba(255,255,255,0.88);
       line-height: 1.65;
       margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
     }
     .prod-marcas {
       display: inline-block;
       font-size: 0.70rem;
-      color: var(--vermelho);
+      color: #fff;
       font-weight: 700;
       letter-spacing: 0.04em;
-      background: rgba(204,22,22,0.08);
+      background: rgba(255,255,255,0.20);
       padding: 4px 10px;
       border-radius: 20px;
+      position: relative;
+      z-index: 2;
     }
+
+    /* Backgrounds individuais dos cards */
+    .card-colchoes     { background-image: url('images/Cliente_1_7_COLCHAO ESPUMA BLACK  WHITE AI.jpg'); }
+    .card-camas-box    { background-image: url('images/Cliente_1_51_CAMA BOX BAU MASTER DEVA BLIND.jpg'); }
+    .card-cabeceiras   { background-image: url('images/Cliente_1_1_CABECEIRA MAGNOLIA LINHO BEGE.jpg'); }
+    .card-travesseiros { background-image: url('images/Cliente_1_42_TRAVESSEIRO  LATEX LIGHT ALTO.jpg'); }
+    .card-roupas       { background-image: url('images/Cliente_1_36_JOGO 4 PCS   LISO COM RENDA EX.jpg'); }
+    .card-entrega      { background-image: url('images/Cliente_1_32_FRENTE LOJA.jpeg'); }
 
     /* ══════════════════════════════════════
        MARCAS
@@ -1818,42 +1855,42 @@
     </div>
     <div class="produtos-grid">
 
-      <div class="produto-card reveal d1">
+      <div class="produto-card card-colchoes reveal d1">
         <div class="prod-icon"><i class="fas fa-bed" aria-hidden="true"></i></div>
         <h3>Colchões</h3>
         <p>Colchões de alta qualidade com diferentes tecnologias e densidades, ideais para garantir um sono saudável e confortável.</p>
         <span class="prod-marcas">Castor · D'Angelis · Prorelax · Paropas · Passalacqua</span>
       </div>
 
-      <div class="produto-card reveal d2">
+      <div class="produto-card card-camas-box reveal d2">
         <div class="prod-icon"><i class="fas fa-moon" aria-hidden="true"></i></div>
         <h3>Camas Box</h3>
         <p>Estruturas resistentes e modernas em diversos tamanhos e modelos, incluindo opções com baú para melhor aproveitamento de espaço.</p>
         <span class="prod-marcas">Castor · V-Joy</span>
       </div>
 
-      <div class="produto-card reveal d3">
+      <div class="produto-card card-cabeceiras reveal d3">
         <div class="prod-icon"><i class="fas fa-couch" aria-hidden="true"></i></div>
         <h3>Cabeceiras</h3>
         <p>Modelos elegantes que valorizam o ambiente e trazem mais aconchego ao seu quarto, com variedade de estilos e acabamentos.</p>
         <span class="prod-marcas">Styllus do Brasil</span>
       </div>
 
-      <div class="produto-card reveal d4">
+      <div class="produto-card card-travesseiros reveal d4">
         <div class="prod-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
         <h3>Travesseiros</h3>
         <p>Conforto e suporte ideais para o seu descanso, com opções que se adaptam a diferentes posições de dormir.</p>
         <span class="prod-marcas">Castor · Duoflex · Lavive Enxovais</span>
       </div>
 
-      <div class="produto-card reveal d5">
+      <div class="produto-card card-roupas reveal d5">
         <div class="prod-icon"><i class="fas fa-star" aria-hidden="true"></i></div>
         <h3>Roupas de Cama</h3>
         <p>Jogos completos com tecidos macios e duráveis, pensados para proporcionar conforto e deixar seu quarto ainda mais bonito.</p>
         <span class="prod-marcas">Sulbrasil</span>
       </div>
 
-      <div class="produto-card reveal d6">
+      <div class="produto-card card-entrega reveal d6">
         <div class="prod-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
         <h3>Entrega e montagem gratuita</h3>
         <p>Realizamos entrega e montagem gratuita em Leme/SP e região, com agilidade e cuidado para garantir sua satisfação total.</p>
@@ -2239,6 +2276,80 @@
 
   // ── Carrossel ────────────────────────────────────────
   const carImagens = [
+    /* Loja */
+    'images/Cliente_1_32_FRENTE LOJA.jpeg',
+    'images/Cliente_1_34_INTERIOR LOJA.jpeg',
+    'images/Cliente_1_35_INTERIOR LOJA.jpeg',
+    /* Colchões espuma */
+    'images/Cliente_1_7_COLCHAO ESPUMA BLACK  WHITE AI.jpg',
+    'images/Cliente_1_8_COLCHAO ESPUMA BLACK  WHITE AI.JPG',
+    'images/Cliente_1_9_COLCHAO ESPUMA BLACK  WHITE AI.jpg',
+    'images/Cliente_1_10_COLCHAO ESPUMA BLACK  WHITE AI.jpg',
+    'images/Cliente_1_11_COLCHAO ESPUMA ORTHOSONO BORDA.png',
+    'images/Cliente_1_12_COLCHAO ESPUMA ORTHOSONO BORDA.png',
+    'images/Cliente_1_13_COLCHAO ESPUMA SLEEP MAX D33 D.png',
+    'images/Cliente_1_14_COLCHAO ESPUMA SLEEP MAX D33 D.jpg',
+    'images/Cliente_1_26_colchao-casal-espuma-d45-casto.jpg',
+    'images/Cliente_1_27_colchao-casal-espuma-d45-casto.jpg',
+    'images/Cliente_1_28_colchao-casal-espuma-d45-casto.jpg',
+    /* Colchões mola ensacada */
+    'images/Cliente_1_15_COLCHAO MOLA ENSACADA CARBON P.jpg',
+    'images/Cliente_1_16_COLCHAO MOLA ENSACADA CARBON P.jpg',
+    'images/Cliente_1_17_COLCHAO MOLA ENSACADA KING BES.png',
+    'images/Cliente_1_18_COLCHAO MOLA ENSACADA SOFT DRE.png',
+    'images/Cliente_1_19_COLCHAO MOLA ENSACADA SOFT DRE.png',
+    'images/Cliente_1_20_COLCHAO MOLA ENSACADA SOFT DRE.png',
+    'images/Cliente_1_21_COLCHAO MOLA ENSACADA SOFT DRE.png',
+    'images/Cliente_1_30_COLCHAO MOLA ENSACADA ECO LINH.jpg',
+    /* Colchões mola pocket */
+    'images/Cliente_1_22_COLCHAO MOLA POCKET HOTEL COLL.jpg',
+    'images/Cliente_1_23_COLCHAO MOLA POCKET HOTEL COLL.png',
+    'images/Cliente_1_24_COLCHAO MOLA POCKET SILVER STA.png',
+    'images/Cliente_1_25_COLCHAO MOLA POCKET SILVER STA.png',
+    /* Hotel collection */
+    'images/Cliente_1_29_Detalhe hotel.JPG',
+    'images/Cliente_1_31_fbd92e080ca3698e6dfaea359e41ba.jpg',
+    'images/Cliente_1_33_hotel collection.jpg',
+    /* Camas box */
+    'images/Cliente_1_51_CAMA BOX BAU MASTER DEVA BLIND.jpg',
+    'images/Cliente_1_52_CAMA BOX BAU MASTER DEVA BLIND.jpg',
+    'images/Cliente_1_53_CAMA BOX BAU MASTER DEVA BLIND.jpg',
+    'images/Cliente_1_54_CAMA BOX BAU MASTER DEVA BLIND.jpg',
+    'images/Cliente_1_55_CAMA BOX BAU MASTER DEVA BLIND.jpg',
+    'images/Cliente_1_56_CAMA BOX SIMPLES MASTER DEVA L.jpg',
+    'images/Cliente_1_57_CAMA BOX SIMPLES MASTER DEVA L.jpg',
+    'images/Cliente_1_58_CAMA BOX SIMPLES POLI POLIESTE.jpg',
+    'images/Cliente_1_59_CAMA BOX SIMPLES POLI POLIESTE.jpg',
+    'images/Cliente_1_60_CAMA BOX SIMPLES POLI POLIESTE.jpg',
+    'images/Cliente_1_61_CAMA BOX SIMPLES POLI POLIESTE.jpg',
+    'images/Cliente_1_62_CAMA BOX SIMPLES POLI POLIESTE.jpg',
+    /* Cabeceiras */
+    'images/Cliente_1_1_CABECEIRA MAGNOLIA LINHO BEGE.jpg',
+    'images/Cliente_1_2_CABECEIRA NICOLE LINHO OFF WHI.jpg',
+    'images/Cliente_1_3_CABECEIRA TOPAZIO LINHO OFF WH.jpg',
+    'images/Cliente_1_4_CABECEIRA TOPAZIO LINHO TRAMAD.jpg',
+    /* Travesseiros */
+    'images/Cliente_1_42_TRAVESSEIRO  LATEX LIGHT ALTO.jpg',
+    'images/Cliente_1_43_TRAVESSEIRO  REAL LATEX ALTO D.jpg',
+    'images/Cliente_1_44_TRAVESSEIRO LATEX LIGHT CERVIC.jpg',
+    'images/Cliente_1_45_TRAVESSEIRO NASA ALTO  DUOFLEX.jpg',
+    'images/Cliente_1_46_TRAVESSEIRO PLUMA EXTRA FIRME.jpg',
+    'images/Cliente_1_47_TRAVESSEIRO PLUMA FIRME LAVIVE.jpg',
+    'images/Cliente_1_48_TRAVESSEIRO TOQUE DE PLUMA LAV.jpg',
+    'images/Cliente_1_49_TRAVESSEIRO TYPE LATEX BAMBOO.jpg',
+    'images/Cliente_1_50_Type Latex Bambu - R 34900.jpg',
+    /* Roupas de cama */
+    'images/Cliente_1_36_JOGO 4 PCS   LISO COM RENDA EX.jpg',
+    'images/Cliente_1_37_JOGO 4 PCS  LISO COM RENDA EXC.jpg',
+    'images/Cliente_1_38_JOGO 4 PCS LISO COM RENDA EXCL.jpg',
+    /* Pillow top */
+    'images/Cliente_1_39_PILLOW TOP LA PLUME SULBRASIL.jpg',
+    'images/Cliente_1_40_PILLOW TOP LA PLUME SULBRASIL.jpg',
+    'images/Cliente_1_41_PILLOW TOP LA PLUME SULBRASIL.jpg',
+    /* Capa protetora */
+    'images/Cliente_1_5_CAPA PROTETORA VIVALDI MALHA B.jpg',
+    'images/Cliente_1_6_CAPA PROTETORA VIVALDI MALHA B.jpg',
+    /* Mídias originais */
     'images/midia_3.png',
     'images/midia_4.jpg',
     'images/midia_5.jpg',
