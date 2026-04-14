@@ -1057,6 +1057,91 @@
     }
 
     /* ══════════════════════════════════════
+       VITRINE NAV + BANNER
+    ══════════════════════════════════════ */
+    .nav-vitrine-link {
+      background: rgba(204,22,22,0.12) !important;
+      color: var(--branco) !important;
+      border: 1px solid rgba(204,22,22,0.4);
+      padding: 7px 16px !important;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-vitrine-link:hover { background: rgba(204,22,22,0.22) !important; border-color: rgba(204,22,22,0.6); }
+
+    .vitrine-banner { margin-top: 48px; }
+    .vitrine-banner-inner {
+      background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul2) 100%);
+      border-radius: 20px;
+      padding: 48px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .vitrine-banner-inner::before {
+      content: '';
+      position: absolute;
+      top: -60%; right: -10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(204,22,22,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .vitrine-banner-text { position: relative; z-index: 1; max-width: 600px; }
+    .vitrine-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(204,22,22,0.14);
+      border: 1px solid rgba(204,22,22,0.4);
+      color: #F87171;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.70rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .vitrine-banner-text h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 800;
+      color: var(--branco);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .vitrine-banner-text p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.72;
+      margin-bottom: 28px;
+    }
+    .vitrine-banner-icon {
+      position: relative;
+      z-index: 1;
+      width: 130px; height: 130px;
+      background: rgba(204,22,22,0.08);
+      border: 1px solid rgba(204,22,22,0.2);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .vitrine-banner-icon i {
+      font-size: 3.2rem;
+      color: #F87171;
+      opacity: 0.7;
+    }
+
+    /* ══════════════════════════════════════
        FOOTER
     ══════════════════════════════════════ */
     footer {
@@ -1531,6 +1616,9 @@
       .depo-arrow { width: 38px; height: 38px; }
       .produto-card { padding: 28px 20px; }
       .contato-mapa iframe { height: 300px; }
+      .vitrine-banner-inner { flex-direction: column; text-align: center; padding: 36px 24px; }
+      .vitrine-banner-icon { width: 100px; height: 100px; border-radius: 18px; }
+      .vitrine-banner-icon i { font-size: 2.5rem; }
     }
 
     /* Mobile (≤600px) */
@@ -1574,6 +1662,10 @@
       .anos-numero { font-size: 3.8rem; }
       .sobre-badges { grid-template-columns: 1fr; }
       .contato-mapa iframe { height: 280px; }
+      .vitrine-banner-inner { padding: 28px 20px; gap: 20px; }
+      .vitrine-banner-icon { width: 80px; height: 80px; }
+      .vitrine-banner-icon i { font-size: 2rem; }
+      .vitrine-banner-text .btn { width: 100%; justify-content: center; }
       .dif-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
       .car-slide img { max-height: 260px; }
       .lb-arrow { width: 40px; height: 40px; font-size: 1rem; }
@@ -1637,18 +1729,19 @@
 <!-- ===== HEADER ===== -->
 <header id="header">
   <div class="container header-inner">
-    <a href="#hero" class="header-logo" aria-label="Casa dos Colchões — início">
+    <a href="index.html" class="header-logo" aria-label="Casa dos Colchões — início">
       <img src="images/logo.png" alt="Logo Casa dos Colchões">
     </a>
 
     <nav class="desktop-nav" aria-label="Navegação principal">
       <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#marcas">Marcas</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#marcas">Marcas</a></li>
+        <li><a href="index.html#galeria">Galeria</a></li>
+        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+        <li><a href="vitrine.html" class="nav-vitrine-link"><i class="fas fa-store"></i> Vitrine</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
       </ul>
     </nav>
 
@@ -1665,12 +1758,13 @@
 
 <!-- ===== MENU MOBILE ===== -->
 <nav id="navMenu" aria-label="Menu mobile" aria-hidden="true">
-  <a href="#sobre"        onclick="closeMenu()">Sobre</a>
-  <a href="#produtos"     onclick="closeMenu()">Produtos</a>
-  <a href="#marcas"       onclick="closeMenu()">Marcas</a>
-  <a href="#galeria"      onclick="closeMenu()">Galeria</a>
-  <a href="#depoimentos"  onclick="closeMenu()">Depoimentos</a>
-  <a href="#contato"      onclick="closeMenu()">Contato</a>
+  <a href="index.html#sobre"        onclick="closeMenu()">Sobre</a>
+  <a href="index.html#produtos"     onclick="closeMenu()">Produtos</a>
+  <a href="index.html#marcas"       onclick="closeMenu()">Marcas</a>
+  <a href="index.html#galeria"      onclick="closeMenu()">Galeria</a>
+  <a href="index.html#depoimentos"  onclick="closeMenu()">Depoimentos</a>
+  <a href="vitrine.html"            onclick="closeMenu()"><i class="fas fa-store"></i> Vitrine</a>
+  <a href="index.html#contato"      onclick="closeMenu()">Contato</a>
   <a href="https://wa.me/551935543961" target="_blank" onclick="closeMenu()" class="mob-cta">
     <i class="fab fa-whatsapp"></i> Falar no WhatsApp
   </a>
@@ -1696,6 +1790,9 @@
       <div class="hero-btns">
         <a href="#produtos" class="btn btn-vermelho">
           <i class="fas fa-bed" aria-hidden="true"></i> Ver produtos
+        </a>
+        <a href="vitrine.html" class="btn btn-outline">
+          <i class="fas fa-store" aria-hidden="true"></i> Acessar vitrine
         </a>
         <a href="https://wa.me/551935543961" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
@@ -1898,6 +1995,24 @@
       </div>
 
     </div>
+
+    <!-- Banner Vitrine -->
+    <div class="vitrine-banner reveal">
+      <div class="vitrine-banner-inner">
+        <div class="vitrine-banner-text">
+          <span class="vitrine-badge-tag"><i class="fas fa-store"></i> Vitrine online</span>
+          <h3>Veja todos os nossos produtos na vitrine digital</h3>
+          <p>Confira fotos, descrições e preços de colchões, camas box, cabeceiras e muito mais. Escolha o conforto ideal sem sair de casa.</p>
+          <a href="vitrine.html" class="btn btn-vermelho">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Acessar vitrine
+          </a>
+        </div>
+        <div class="vitrine-banner-icon">
+          <i class="fas fa-laptop-house"></i>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2190,13 +2305,14 @@
       <div class="footer-nav">
         <h4>Navegação</h4>
         <ul>
-          <li><a href="#hero">Início</a></li>
-          <li><a href="#sobre">Nossa história</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#marcas">Marcas</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#sobre">Nossa história</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#marcas">Marcas</a></li>
+          <li><a href="vitrine.html">Vitrine</a></li>
+          <li><a href="index.html#galeria">Galeria</a></li>
+          <li><a href="index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </div>
 

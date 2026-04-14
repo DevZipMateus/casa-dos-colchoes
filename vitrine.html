@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração de Vitrine — Casa dos Colchões</title>
+  <meta name="description" content="Confira nossa vitrine online de colchões, camas box, cabeceiras e travesseiros. Casa dos Colchões — Leme/SP.">
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:        #0A2463;
+      --azul2:       #1A3A7A;
+      --azul-escuro: #061840;
+      --vermelho:    #CC1616;
+      --branco:      #FFFFFF;
+      --header-h:    80px;
+      --badge-h:     63px;
+      --tr:          0.25s ease;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Open Sans', sans-serif;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: var(--header-h);
+      z-index: 1000;
+      background: var(--azul-escuro);
+      border-bottom: 2px solid rgba(204,22,22,0.5);
+      display: flex;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-logo img {
+      height: 50px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2px;
+    }
+    .desktop-nav ul li a {
+      color: rgba(255,255,255,0.80);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 8px 13px;
+      border-radius: 5px;
+      transition: all var(--tr);
+    }
+    .desktop-nav ul li a:hover { color: var(--branco); background: rgba(255,255,255,0.10); }
+    .desktop-nav ul li a.active { color: var(--branco); background: rgba(255,255,255,0.12); }
+
+    .nav-vitrine-link {
+      background: rgba(204,22,22,0.12) !important;
+      color: var(--branco) !important;
+      border: 1px solid rgba(204,22,22,0.4);
+      padding: 7px 16px !important;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-vitrine-link:hover { background: rgba(204,22,22,0.22) !important; border-color: rgba(204,22,22,0.6); }
+
+    .btn-header-wpp {
+      background: var(--vermelho);
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.80rem;
+      font-weight: 700;
+      padding: 9px 18px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: background var(--tr);
+      flex-shrink: 0;
+    }
+    .btn-header-wpp:hover { background: #AA1010; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--branco);
+      border-radius: 2px;
+      transition: all var(--tr);
+    }
+
+    #navMenu {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; width: 100%;
+      background: var(--azul-escuro);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    #navMenu.open { display: flex; }
+    #navMenu a {
+      color: rgba(255,255,255,0.80);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 15px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all var(--tr);
+    }
+    #navMenu a:hover { color: var(--branco); background: rgba(255,255,255,0.07); }
+    #navMenu .mob-cta {
+      background: var(--vermelho);
+      color: var(--branco);
+      text-align: center;
+      padding: 16px 24px;
+      border-bottom: none;
+      font-weight: 700;
+    }
+    #navMenu .mob-cta:hover { background: #AA1010; }
+
+    /* ===== IFRAME ===== */
+    .vitrine-frame {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      width: 100%;
+      height: calc(100vh - var(--header-h) - var(--badge-h));
+      border: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root { --header-h: 64px; }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .btn-header-wpp span { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-h: 60px; }
+      .container { padding: 0 16px; }
+    }
+
+    @media (max-width: 360px) {
+      :root { --header-h: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo" aria-label="Casa dos Colchões — início">
+      <img src="images/logo.png" alt="Logo Casa dos Colchões">
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#marcas">Marcas</a></li>
+        <li><a href="index.html#galeria">Galeria</a></li>
+        <li><a href="index.html#depoimentos">Depoimentos</a></li>
+        <li><a href="vitrine.html" class="nav-vitrine-link active"><i class="fas fa-store"></i> Vitrine</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a href="https://wa.me/551935543961" class="btn-header-wpp" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>Falar pelo WhatsApp</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="navMenu" aria-label="Menu mobile" aria-hidden="true">
+  <a href="index.html#sobre"       onclick="closeMenu()">Sobre</a>
+  <a href="index.html#produtos"    onclick="closeMenu()">Produtos</a>
+  <a href="index.html#marcas"      onclick="closeMenu()">Marcas</a>
+  <a href="index.html#galeria"     onclick="closeMenu()">Galeria</a>
+  <a href="index.html#depoimentos" onclick="closeMenu()">Depoimentos</a>
+  <a href="vitrine.html"           onclick="closeMenu()"><i class="fas fa-store"></i> Vitrine</a>
+  <a href="index.html#contato"     onclick="closeMenu()">Contato</a>
+  <a href="https://wa.me/551935543961" target="_blank" onclick="closeMenu()" class="mob-cta">
+    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+  </a>
+</nav>
+
+<!-- ===== IFRAME ===== -->
+<iframe class="vitrine-frame" src="https://adefatimagarcia.egestor.com.br/vitrine/" title="Vitrine Casa dos Colchões"></iframe>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('ativo');
+  });
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('ativo');
+  }
+</script>
+</body>
+</html>
